@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  padding: 1rem;
+}
+
+.link {
+  &&:not(:first-child) {
+    margin-left: 1.25rem;
+    &::before {
+      content: "|";
+      position: absolute;
+      left: -1rem;
+    }
+  }
+}
+
+.link-container {
+  display: inline-flex;
+  margin: auto;
+}

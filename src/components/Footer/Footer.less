@@ -1,0 +1,80 @@
+@import "../../colors.less";
+
+.footer {
+  background-color: @support-grey;
+  color: @support-lighter-grey;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 100rem;
+  margin: auto;
+}
+
+.link-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.icon-link {
+  position: relative;
+  display: flex;
+  color: @support-lighter-grey;
+  border-width: 2px;
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-color: transparent;
+  padding: 0.5rem;
+  &:not(:first-child) {
+    margin-left: 1rem;
+  }
+  &::after,
+  &::before {
+    content: "";
+    width: 0%;
+    height: 0%;
+    position: absolute;
+    visibility: hidden;
+    border-radius: 0.5rem;
+  }
+  &::after {
+    border-left: 4px solid currentColor;
+    border-bottom: 4px solid currentColor;
+    transition: width 0.05s ease 0.05s, height 0.05s ease, visibility 0s 0.1s;
+    bottom: -2px;
+    right: -2px;
+  }
+  &::before {
+    border-top: 4px solid currentColor;
+    border-right: 4px solid currentColor;
+    transition: width 0.05s ease 0.15s, height 0.05s ease 0.1s,
+      visibility 0s 0.2s;
+    top: -2px;
+    left: -2px;
+  }
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+  }
+  &:hover::before {
+    transition: width 0.05s ease, height 0.05s ease 0.05s;
+  }
+  &:hover::after {
+    transition: width 0.05s ease 0.1s, height 0.05s ease 0.15s,
+      visibility 0s 0.1s;
+  }
+  svg {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.copyright {
+  p {
+    margin: 0;
+  }
+}

@@ -1,0 +1,96 @@
+@import "../colors.less";
+
+.container {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  max-width: 70rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.social-list {
+}
+
+.social-item {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  margin-bottom: 1rem;
+  justify-content: flex-end;
+}
+
+.icon {
+  width: 2rem;
+}
+
+.icon-container {
+  height: 100%;
+  background-color: @support-darker-grey;
+  color: @white-color;
+  display: flex;
+  align-items: center;
+  width: 4rem;
+  justify-content: center;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    right: -0.5rem;
+    transform: rotate(45deg);
+    border: 0.5rem solid @support-darker-grey;
+    z-index: 1;
+  }
+}
+
+.image {
+  float: left;
+  margin-right: 1rem;
+}
+
+.link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  width: 20rem;
+  text-align: center;
+  padding-left: 1.5rem;
+  text-decoration: none;
+  line-height: 2rem;
+  &.fb {
+    background-color: @facebook-color;
+  }
+  &.insta {
+    background: radial-gradient(
+      circle at 5% 170%,
+      @insta-color1 5%,
+      @insta-color2 25%,
+      @insta-color3 55%,
+      @insta-color4 80%,
+      @insta-color5 95%
+    );
+  }
+  &.mail {
+    background-color: @mail-color;
+  }
+}
+
+.post-container {
+  @media only screen and (max-width: 756px) {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}

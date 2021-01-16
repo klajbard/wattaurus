@@ -1,0 +1,6 @@
+Sitemap: http://wattaurus.com/sitemap.xml
+User-agent: *
+Disallow: /*.png
+Disallow: /*.jpg
+Disallow: /*.svg
+Disallow: /*.mp4

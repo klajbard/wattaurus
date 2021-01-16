@@ -1,0 +1,127 @@
+@import "../../colors.less";
+
+.container {
+  display: flex;
+}
+
+.post {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  width: 70rem;
+}
+
+.post-container {
+  margin: 2rem 0;
+  :link,
+  :visited {
+    color: @primary-color-dark;
+  }
+}
+
+.paragraph {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2rem;
+  code {
+    cursor: text;
+  }
+}
+
+.content {
+  margin: 0.5rem 0;
+  text-align: justify;
+  &-first {
+    margin-top: 2rem;
+  }
+  .emphasize {
+    margin-right: 0.25rem;
+    font-size: 2rem;
+    line-height: 1rem;
+  }
+  blockquote {
+    margin: 0.5rem 0 0.5rem 1.5rem;
+    padding: 0 1.5rem;
+    color: @support-grey;
+    border-left: 0.5rem solid @support-light-grey;
+  }
+  p {
+    margin: 0;
+    text-indent: 2.5rem;
+    strong {
+      white-space: nowrap;
+    }
+  }
+  code {
+    color: @secondary-color;
+  }
+  table {
+    margin: 1.5rem auto;
+    border-collapse: collapse;
+    font-size: 1.2rem;
+    th,
+    td {
+      padding: 0 0.5rem;
+      border: 1px solid @support-darker-grey;
+    }
+  }
+}
+
+.p-title {
+  margin: 0.5rem 0 0;
+  &:link,
+  &:visited {
+    position: relative;
+    color: @support-darker-grey;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      &::before {
+        content: "#";
+        position: absolute;
+        top: 0.75rem;
+        left: -1.25rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.code-container {
+  display: grid;
+  position: relative;
+}
+
+.code-title {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  color: #ccc;
+}
+
+.anchor {
+  position: fixed;
+  right: 2rem;
+  bottom: 8rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  background-color: @primary-color;
+  color: @white-color;
+  border-radius: 0.25rem;
+  font-size: 2.5rem;
+  font-family: "Alata", sans-serif;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:focus {
+    outline: 1px;
+  }
+  &:active {
+    box-shadow: inset 2px 2px 4px @support-grey;
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "webpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development",
+    "prettier": "prettier --write --check 'src/**/*.{js,jsx,json,less,html}'",
+    "linter": "eslint src/**/*.js",
+    "precommit": "npm run linter && npm run prettier"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "prismjs": "^1.21.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@popperjs/core": "^2.4.4",
+    "@svgr/webpack": "^5.4.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-prismjs": "^2.0.1",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^3.5.3",
+    "eslint": "^7.0.0",
+    "eslint-plugin-react": "^7.20.0",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "less-loader": "^6.1.0",
+    "prettier": "2.0.5",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^1.2.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

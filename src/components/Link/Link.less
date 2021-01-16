@@ -1,0 +1,14 @@
+@import "../../colors.less";
+@import "../../mixins.less";
+
+.container {
+  cursor: pointer;
+  position: relative;
+  color: currentColor;
+  text-decoration: underline;
+  border: none;
+  &.nav {
+    text-decoration: none;
+    .animated-underline();
+  }
+}

@@ -1,0 +1,55 @@
+@import "./colors.less";
+
+:global {
+  html {
+    font-size: 75%;
+    color: @support-dark-grey;
+
+    @media only screen and (max-width: 480px) {
+      font-size: 62.5%;
+    }
+  }
+
+  body {
+    font-family: "Alata", sans-serif;
+    margin: 0;
+    min-width: 320px;
+    cursor: default;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+  }
+
+  .hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 995px) {
+}
+
+@media only screen and (max-width: 480px) {
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 100rem;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.fallback {
+  margin: auto;
+}

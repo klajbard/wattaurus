@@ -1,0 +1,31 @@
+.figure {
+  margin: 0.5rem 0;
+  width: 50%;
+  text-align: center;
+  font-style: italic;
+  border: thin #cecece solid;
+  &.left {
+    float: left;
+    margin-right: 2rem;
+  }
+  &.right {
+    float: right;
+    margin-left: 2rem;
+  }
+  &.none {
+    float: none;
+    margin: auto;
+  }
+  @media only screen and (max-width: 480px) {
+    && {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+}
