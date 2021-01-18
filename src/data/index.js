@@ -11,6 +11,7 @@ import policelight from "./policelight";
 import rpiLego from "./rpi_lego";
 import rpiBootUsb from "./rpi-boot-usb";
 import rpiInstall from "./rpi-install";
+import dht_sdcard from "./dht_sdcard";
 import smartSwitch from "./smart_switch";
 import smartSwitch2 from "./smart_switch2";
 import zigbee from "./zigbee";
@@ -19,6 +20,7 @@ const posts = [
   sevensegment,
   arduinoIde,
   d1mini_ir,
+  dht_sdcard,
   first,
   hcsr04,
   led_circle,
