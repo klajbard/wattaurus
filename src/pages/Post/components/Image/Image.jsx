@@ -34,6 +34,7 @@ function figurizer(Component, image) {
           alt={image.alt}
           className={`${progressiveStyles.preview} ${styles.image}`}
           referrerPolicy="no-referrer"
+          rel="preconnect"
         />
       ) : (
         <Component image={image} />

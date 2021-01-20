@@ -57,6 +57,7 @@ export default function useLazyLoad() {
         }, retryCount * 3000);
       };
 
+    img.rel = "preconnect"
     img.src = href;
   }
 
