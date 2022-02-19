@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from "react";
-import ReactMarkdown from "react-markdown/with-html";
+import Markdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import rehypeSanitize from "rehype-sanitize";
 import styles from "./Post.less";
 import { useParams, useLocation } from "react-router-dom";
 import PostHeader from "./PostHeader";
@@ -72,14 +74,9 @@ export default function Post() {
                     index === 0 ? ` ${styles.contentFirst}` : ""
                   }`}
                 >
-                  <ReactMarkdown
-                    source={
-                      index === 0
-                        ? emphasizeFirstWord(paragraph.text)
-                        : paragraph.text
-                    }
-                    escapeHtml={false}
-                    renderers={{
+                  <Markdown
+                    rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                    components={{
                       link: (props) => {
                         const additionalProps = props.href.startsWith("http")
                           ? { target: "_blank", rel: "noreferrer noopener" }
@@ -91,7 +88,11 @@ export default function Post() {
                         );
                       },
                     }}
-                  />
+                  >
+                    {index === 0
+                      ? emphasizeFirstWord(paragraph.text)
+                      : paragraph.text}
+                  </Markdown>
                 </div>
               )}
               {paragraph.code && (

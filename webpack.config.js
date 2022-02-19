@@ -26,11 +26,11 @@ module.exports = {
           'style-loader',
           { loader: 'css-loader',
             options: {
-              localsConvention: "dashesOnly", 
               modules: {
+                exportLocalsConvention: "camelCase",
                 localIdentName: "[local][hash:3]",
               },
-            }
+            },
           },
           'less-loader',
         ],
@@ -86,9 +86,11 @@ module.exports = {
     chunkFilename: '[name].bundle.js',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
     compress: true,
+    port: 3000,
     historyApiFallback: true,
-    port: 3000
   }
 }

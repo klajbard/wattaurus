@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 import useLazyLoad from "./hooks/useLazyload";
 import Footer from "./components/Footer/Footer";
 // import Ribbon from "./components/Ribbon/Ribbon";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./App.less";
 import NotFound from "./pages/NotFound";
 import "./Prism.less";
@@ -16,7 +16,7 @@ const Post = React.lazy(() => import("./pages/Post"));
 const Posts = React.lazy(() => import("./components/Posts/Posts"));
 
 function Fallback() {
-  return <div className={styles.fallback}>Loading...</div>
+  return <div className={styles.fallback}>Loading...</div>;
 }
 
 export default function App() {
@@ -28,12 +28,12 @@ export default function App() {
       <Router>
         <Header />
         <main className={styles.main}>
-          <Switch>
-            <Route path="/posts/:id" children={<Post />} />
-            <Route path="/resistor-calc" children={<ResistorCalculator />} />
+          <Routes>
+            <Route path="/posts/:id" element={<Post />} />
+            <Route path="/resistor-calc" element={<ResistorCalculator />} />
             <Route
               path="/posts"
-              children={
+              element={
                 <Posts
                   posts={posts.sort((a, b) => b.time - a.time)}
                   withImage
@@ -41,10 +41,10 @@ export default function App() {
                 />
               }
             />
-            <Route path="/about" children={<About />} />
-            <Route exact path="/" children={<Homepage />} />
-            <Route children={<NotFound />} />
-          </Switch>
+            <Route path="/about" element={<About />} />
+            <Route exact path="/" element={<Homepage />} />
+            <Route element={<NotFound />} />
+          </Routes>
         </main>
         <Footer />
       </Router>
